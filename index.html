@@ -1,0 +1,1892 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dante 선생님 - IELTS 전문가</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1f3a93;
+            --primary-light: #4a69bd;
+            --primary-dark: #142660;
+            --secondary: #f5f7fa;
+            --text-dark: #333;
+            --text-light: #777;
+            --white: #fff;
+            --success: #28a745;
+            --warning: #ffc107;
+            --danger: #dc3545;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--secondary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            padding: 80px 0 40px;
+            border-bottom-left-radius: 50px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://api.a0.dev/assets/image?text=IELTS%20Expert%20Background&aspect=16:9') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            object-fit: cover;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05) rotate(3deg);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .profile-title {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .stats-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+            transition: var(--transition);
+        }
+
+        .stat-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            margin-top: -25px;
+            position: relative;
+            z-index: 10;
+            box-shadow: var(--box-shadow);
+        }
+
+        .nav-list {
+            display: flex;
+            justify-content: space-between;
+            list-style: none;
+            overflow-x: auto;
+            padding: 0 10px;
+        }
+
+        .nav-item {
+            padding: 15px 5px;
+            white-space: nowrap;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            border-top: 5px solid var(--primary);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card-title i {
+            margin-right: 10px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(31, 58, 147, 0.1);
+            border-radius: 50%;
+        }
+
+        .bio {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Accordion Styles */
+        .accordion-item {
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .accordion-header {
+            background: var(--white);
+            padding: 15px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .accordion-header:hover {
+            background: rgba(31, 58, 147, 0.05);
+        }
+
+        .accordion-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: rgba(31, 58, 147, 0.1);
+            border-radius: 50%;
+            margin-right: 15px;
+            color: var(--primary);
+        }
+
+        .accordion-title {
+            flex: 1;
+        }
+
+        .accordion-content {
+            background: var(--white);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .accordion-content-inner {
+            padding: 20px;
+        }
+
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+        }
+
+        /* Program Cards */
+        .programs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .program-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .program-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            padding: 20px;
+            position: relative;
+        }
+
+        .program-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .program-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .program-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--white);
+            color: var(--primary);
+            font-size: 0.8rem;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: 700;
+        }
+
+        .program-content {
+            padding: 20px;
+            flex: 1;
+        }
+
+        .program-feature {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .program-feature i {
+            color: var(--primary);
+            margin-right: 10px;
+            margin-top: 3px;
+        }
+
+        .program-footer {
+            padding: 15px 20px;
+            background: rgba(31, 58, 147, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .program-price {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(31, 58, 147, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(31, 58, 147, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(31, 58, 147, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+        }
+
+        .feature-title {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Schedule Section */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .schedule-table th, .schedule-table td {
+            padding: 15px 20px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-table th {
+            background: var(--primary);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background-color: rgba(31, 58, 147, 0.05);
+        }
+
+        .schedule-table tr:hover {
+            background-color: rgba(31, 58, 147, 0.1);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 5px;
+        }
+
+        .tag-morning {
+            background: rgba(40, 167, 69, 0.1);
+            color: var(--success);
+        }
+
+        .tag-evening {
+            background: rgba(255, 193, 7, 0.1);
+            color: var(--warning);
+        }
+
+        .tag-weekend {
+            background: rgba(220, 53, 69, 0.1);
+            color: var(--danger);
+        }
+
+        /* Contact Section */
+        .contact-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 25px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(31, 58, 147, 0.1);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.8rem;
+        }
+
+        .contact-label {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .contact-value {
+            font-size: 1.1rem;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        .contact-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Social Media */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .social-link.youtube:hover {
+            background: #FF0000;
+        }
+
+        .social-link.blog:hover {
+            background: #03C75A;
+        }
+
+        .social-link.website:hover {
+            background: #1f3a93;
+        }
+
+        /* Course Preview Section */
+        .course-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-content {
+            padding: 25px;
+        }
+
+        .course-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        .course-description {
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 15px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+            position: relative;
+            margin-top: 40px;
+        }
+
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--white);
+            box-shadow: var(--box-shadow);
+            position: absolute;
+            top: -40px;
+            left: 30px;
+        }
+
+        .testimonial-content {
+            padding-top: 50px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-name {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-rating {
+            color: #FFD700;
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .slider-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 15px;
+        }
+
+        .slider-control {
+            width: 40px;
+            height: 40px;
+            background: var(--white);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .slider-control:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .slider-dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(31, 58, 147, 0.3);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            transform: scale(1.3);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: var(--white);
+            text-align: center;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://api.a0.dev/assets/image?text=IELTS%20Success%20Background&aspect=16:9') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .footer-description {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--white);
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--white);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            margin-bottom: 12px;
+        }
+
+        .footer-link a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer-link a:hover {
+            color: var(--white);
+            transform: translateX(5px);
+        }
+
+        .footer-link i {
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1000;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .stats-container {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .nav-list {
+                justify-content: flex-start;
+            }
+
+            .nav-item {
+                padding: 15px 5px;
+            }
+
+            .programs-container,
+            .course-cards,
+            .contact-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonial-slide {
+                padding: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-name {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .stat-item {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            .cta-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* 페이지 로더 추가 */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(31, 58, 147, 0.1);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* 스크롤 프로그레스 바 */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--primary);
+            width: 0;
+            z-index: 9999;
+            transition: width 0.1s ease;
+        }
+        
+        /* 다크 모드 토글 버튼 */
+        .theme-toggle {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+        
+        .theme-toggle:hover {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 페이지 로더 추가 -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <h3 style="margin-top: 20px; color: var(--primary);">Dante 선생님</h3>
+        </div>
+    </div>
+    
+    <!-- 스크롤 프로그레스 바 -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+    
+    <!-- 다크 모드 토글 버튼 -->
+    <div class="theme-toggle" id="themeToggle">
+        <i class="fas fa-moon"></i>
+    </div>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="https://www.aielts.co.kr/data/upload/49/202301/63ca3e0f94301.jpg" alt="Dante 선생님" class="profile-image">
+                <div class="profile-info">
+                    <h1 class="profile-name">Dante 선생님</h1>
+                    <p class="profile-title">IELTS · Duolingo · Academic Writing 전문가</p>
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-value">21+</span>
+                            <span class="stat-label">교육 경력</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">1000+</span>
+                            <span class="stat-label">수강생</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">9.0</span>
+                            <span class="stat-label">평균 점수</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="container">
+        <nav class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item"><a href="#about" class="nav-link active">소개</a></li>
+                <li class="nav-item"><a href="#experience" class="nav-link">경력</a></li>
+                <li class="nav-item"><a href="#programs" class="nav-link">프로그램</a></li>
+                <li class="nav-item"><a href="#features" class="nav-link">수업 특징</a></li>
+                <li class="nav-item"><a href="#schedule" class="nav-link">수업 일정</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">연락처</a></li>
+                <li class="nav-item"><a href="#curriculum" class="nav-link">커리큘럼</a></li>
+                <li class="nav-item"><a href="#testimonials" class="nav-link">후기</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">소개</h2>
+            </div>
+            <div class="card">
+                <p class="bio">
+                    아이엘츠, 수험생들의 합격을 위한 채널을 운영하고 있습니다.
+                    대한민국 영어 에세이의 최고전문가로서 오랜 기간 많은 학생들의 
+                    영어 실력 향상과 시험 합격을 도왔습니다. 체계적인 커리큘럼과 학생 맞춤형 지도로
+                    매년 많은 학생들이 단기간에 목표 점수를 달성하고 있습니다.
+                    체계적인 학습 방법과 효과적인 시험 전략을 통해 학생들의 약점을 보완하고
+                    최고의 결과를 이끌어내는 것이 저의 교육 철학입니다.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">학력 및 경력</h2>
+            </div>
+            <div class="accordion-container">
+                <!-- Education Accordion -->
+                <div class="accordion-item" id="educationAccordion">
+                    <div class="accordion-header">
+                        <div class="accordion-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="accordion-title">학력</div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="education-item">
+                                <h3>MA in TESOL</h3>
+                                <p>The University of York</p>
+                                <p><small>영국</small></p>
+                            </div>
+                        <hr>
+							<div class="education-item">
+								<h3>B.A. in Economics</h3>
+								<p>Chung-Ang University</p>
+								<p><small>한국</small></p>
+						</div>
+                    </div>
+                </div>
+
+                <!-- Work Experience Accordion -->
+                <div class="accordion-item" id="workAccordion">
+                    <div class="accordion-header">
+                        <div class="accordion-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="accordion-title">주요 경력</div>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <div class="experience-item">
+                                <h3>AI speaking app "IELTS Brain" 공동대표</h3>
+                                <p><small>현재</small></p>
+                            </div>
+                            <hr>
+                            <div class="experience-item">
+                                <h3>압구정 IELTS 어학원 대표강사</h3>
+                                <p><small>현재</small></p>
+                            </div>
+                            <hr>
+                            <div class="experience-item">
+                                <h3>강남미키, 이디엠, 파고다 대표강사</h3>
+                                <p><small>전임</small></p>
+                            </div>
+                            <hr>
+                            <div class="experience-item">
+                                <h3>계원예술대학 영작문 교수</h3>
+                                <p><small>전임</small></p>
+                            </div>
+                            <hr>
+                            <div class="experience-item">
+                                <h3>역삼 위드멘토 어학원 원장</h3>
+                                <p><small>전임</small></p>
+                            </div>
+                            <hr>
+                            <div class="experience-item">
+                                <h3>압구정 IK 어학원 원장</h3>
+                                <p><small>전임</small></p>
+                            </div>
+                            <hr>
+                            <div class="experience-item">
+                                <h3>EBS 최초 IELTS Writing 강의</h3>
+                                <p><small>전임</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">강의 프로그램</h2>
+            </div>
+            <div class="programs-container">
+                <!-- Program 1 -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3 class="program-title">듀오링고 단기 합격 코스</h3>
+                        <p class="program-subtitle">Duolingo English Test</p>
+                        <span class="program-badge">인기</span>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>8회 완성 프로그램</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>20점 상승 보장 (75→95 / 85→105)</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>맞춤형 전략 학습</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>실전 모의고사 제공</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>영역별 취약점 분석 및 보완</p>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <a href="#contact" class="btn">수강 문의</a>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3 class="program-title">아이엘츠 단기 합격 코스</h3>
+                        <p class="program-subtitle">IELTS Academic/General</p>
+                        <span class="program-badge">베스트</span>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>10회 완성 프로그램</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Overall 1.0 상승 보장 (5.5→6.5 / 6.0→7.0)</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>영역별 집중 훈련</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>주간 성과 분석</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Speaking & Writing 개인 첨삭</p>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <a href="#contact" class="btn">수강 문의</a>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="program-card">
+                    <div class="program-header">
+                        <h3 class="program-title">Academic Writing Intensive</h3>
+                        <p class="program-subtitle">대학/대학원 에세이 실전 대비</p>
+                    </div>
+                    <div class="program-content">
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>유학 전 실전 에세이 완성 과정</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>10회 집중 커리큘럼</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>3000-5000 단어 에세이 작성법</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Research Methods & Critical Thinking</p>
+                        </div>
+                        <div class="program-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Academic Style & Reference & Citation</p>
+                        </div>
+                    </div>
+                    <div class="program-footer">
+                        <a href="#contact" class="btn">수강 문의</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">수업 특징</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3 class="feature-title">1:1 맞춤형 수업</h3>
+                    <p>개인 역량과 목표에 맞춘 커리큘럼으로 효율적인 학습</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                    <h3 class="feature-title">무료 레벨테스트</h3>
+                    <p>정확한 현재 실력 진단과 맞춤형 학습 계획 수립</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="feature-title">점수 보장제</h3>
+                    <p>목표 점수 미달성 시 추가 수업 제공</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="feature-title">체계적 성과 관리</h3>
+                    <p>주간 테스트 및 피드백으로 꾸준한 실력 향상 확인</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="feature-title">체계적 지도</h3>
+                    <p>21년 경력의 노하우를 담은 효과적인 학습 방법론</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="feature-title">독자 개발 교재</h3>
+                    <p>최신 출제 경향과 효과적인 학습법을 담은 자체 교재</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schedule Section -->
+    <section id="schedule" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">수업 일정</h2>
+            </div>
+            <div class="card">
+                <h3 class="card-title"><i class="fas fa-calendar-alt"></i> 압구정 아이엘츠 어학원 현장 강의</h3>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>반</th>
+                            <th>요일</th>
+                            <th>시간</th>
+                            <th>대상</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="tag tag-morning">오전반</span></td>
+                            <td>월화수목금</td>
+                            <td>10:00 - 17:00</td>
+                            <td>7.0 목표반</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag tag-evening">저녁반</span></td>
+                            <td>화, 목</td>
+                            <td>18:00 - 20:00</td>
+                            <td>6.0-6.5 목표반</td>
+                        </tr>
+                        <tr>
+                            <td><span class="tag tag-weekend">주말반</span></td>
+                            <td>토</td>
+                            <td>10:00 - 17:00</td>
+                            <td>6.0-6.5 목표반</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 20px; text-align: center;">
+                    <a href="#contact" class="btn">수업 신청하기</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">문의 및 연락처</h2>
+            </div>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3 class="contact-label">카카오톡</h3>
+                    <p class="contact-value">danteteacher</p>
+                    <p class="contact-note">1:1 수업 문의</p>
+                    <a href="https://open.kakao.com/me/danteteacher" class="btn btn-outline" target="_blank">카카오톡 연결</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3 class="contact-label">전화</h3>
+                    <p class="contact-value">010-8460-0419</p>
+                    <p class="contact-note">문자 남겨주시면 연락드리겠습니다</p>
+                    <a href="tel:01084600419" class="btn btn-outline">전화 걸기</a>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <h3 class="contact-label">압구정 아이엘츠</h3>
+                    <p class="contact-value">02-517-6200</p>
+                    <p class="contact-note">정규수업 문의</p>
+                    <a href="https://aielts.co.kr/home" class="btn btn-outline" target="_blank">홈페이지 방문</a>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="https://www.youtube.com/channel/UCyzGfprxJy6EZNhjLtBJW2g" class="social-link youtube" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="https://blog.naver.com/danteielts" class="social-link blog" target="_blank">
+                    <i class="fas fa-blog"></i>
+                </a>
+                <a href="https://aielts.co.kr/home" class="social-link website" target="_blank">
+                    <i class="fas fa-globe"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Preview Section -->
+    <section id="curriculum" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">커리큘럼 미리보기</h2>
+            </div>
+            <div class="course-cards">
+                <div class="course-card">
+                    <img src="https://api.a0.dev/assets/image?text=IELTS%20Writing%20Class%20with%20students%20in%20classroom&aspect=16:9" alt="IELTS Writing Class" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">IELTS Writing 완성반</h3>
+                        <p class="course-description">
+                            ・Task 1, 2 완벽 대비<br>
+                            ・에세이 구조 및 고급 표현 학습<br>
+                            ・주 2회, 8주 과정<br>
+                            ・Cambridge Official Materials 활용<br>
+                            ・개인별 첨삭 및 피드백 제공
+                        </p>
+                        <a href="#contact" class="btn">자세히 보기</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <img src="https://api.a0.dev/assets/image?text=Duolingo%20English%20Test%20preparation%20with%20instructor&aspect=16:9" alt="Duolingo English Test" class="course-image">
+                    <div class="course-content">
+                        <h3 class="course-title">듀오링고 단기 합격반</h3>
+                        <p class="course-description">
+                            ・핵심 전략 및 문제 유형 분석<br>
+                            ・실전과 동일한 환경에서 연습<br>
+                            ・4주 속성 과정<br>
+                            ・인증된 기출문제 풀이<br>
+                            ・AI 기반 답변 연습 및 피드백
+                        </p>
+                        <a href="#contact" class="btn">자세히 보기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" data-aos="fade-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">수강생 후기</h2>
+            </div>
+            <div class="testimonials-container">
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <img src="https://api.a0.dev/assets/image?text=korean%20female%20student%20portrait&aspect=1:1&seed=1" alt="김지현" class="testimonial-img">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "단테 선생님께 8주간 수업 받으며 Writing 점수가 5.5에서 7.0으로 올랐습니다. 
+                                    체계적인 강의와 꼼꼼한 첨삭이 큰 도움이 되었습니다!"
+                                </p>
+                                <h3 class="testimonial-name">김지현</h3>
+                                <p class="testimonial-role">영국 대학원 합격</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <img src="https://api.a0.dev/assets/image?text=korean%20male%20student%20portrait&aspect=1:1&seed=2" alt="박준호" class="testimonial-img">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "영국 대학원 입학을 위해 급하게 아이엘츠를 준비했는데, 선생님의 
+                                    Speaking 수업 덕분에 단기간에 목표 점수를 얻을 수 있었습니다. 정말 감사합니다!"
+                                </p>
+                                <h3 class="testimonial-name">박준호</h3>
+                                <p class="testimonial-role">캐나다 이민 신청</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <img src="https://api.a0.dev/assets/image?text=korean%20female%20student%20portrait&aspect=1:1&seed=3" alt="이수진" class="testimonial-img">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">
+                                    "듀오링고 115점을 목표로 했는데 막막했습니다. 단테 선생님의 전략적인 접근법으로
+                                    120점을 받을 수 있었어요. 특히 Adaptive 테스트에 대한 이해와 준비가 완벽했습니다."
+                                </p>
+                                <h3 class="testimonial-name">이수진</h3>
+                                <p class="testimonial-role">미국 대학 입학</p>
+                                <div class="testimonial-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <div class="slider-control" id="prevSlide">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slider-control" id="nextSlide">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+                <div class="slider-dots" id="sliderDots">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">목표 점수 달성을 위한 첫걸음</h2>
+                <p class="cta-description">
+                    21년 교육 경력의 Dante 선생님과 함께 체계적인 영어 시험 대비를 시작하세요.
+                    맞춤형 커리큘럼과 전문적인 지도로 최단 시간 내 목표 점수 달성을 약속합니다.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn">무료 레벨테스트 신청</a>
+                    <a href="https://open.kakao.com/me/danteteacher" class="btn btn-outline" target="_blank">1:1 상담 문의</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3 class="footer-logo">Dante 선생님</h3>
+                    <p class="footer-description">
+                        대한민국 IELTS, Duolingo, Academic Writing 최고 전문가
+                        압구정 아이엘츠 대표강사
+                    </p>
+                </div>
+                <div class="footer-links-container">
+                    <h3 class="footer-title">빠른 링크</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="#about"><i class="fas fa-angle-right"></i> 소개</a></li>
+                        <li class="footer-link"><a href="#programs"><i class="fas fa-angle-right"></i> 프로그램</a></li>
+                        <li class="footer-link"><a href="#schedule"><i class="fas fa-angle-right"></i> 수업 일정</a></li>
+                        <li class="footer-link"><a href="#contact"><i class="fas fa-angle-right"></i> 연락처</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3 class="footer-title">연락처</h3>
+                    <ul class="footer-links">
+                        <li class="footer-link"><a href="tel:01084600419"><i class="fas fa-phone"></i> 010-8460-0419</a></li>
+                        <li class="footer-link"><a href="https://open.kakao.com/me/danteteacher" target="_blank"><i class="fas fa-comment"></i> 카카오톡: danteteacher</a></li>
+                        <li class="footer-link"><a href="https://aielts.co.kr/home" target="_blank"><i class="fas fa-globe"></i> 압구정 아이엘츠</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-text">© 2025 압구정 아이엘츠 | Dante 선생님. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+
+        // Accordion Functionality
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const accordionItem = header.parentElement;
+                accordionItem.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+
+                    // Update active nav link
+                    document.querySelectorAll('.nav-link').forEach(link => {
+                        link.classList.remove('active');
+                    });
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Testimonial Slider
+        const testimonialSlider = document.getElementById('testimonialSlider');
+        const prevSlide = document.getElementById('prevSlide');
+        const nextSlide = document.getElementById('nextSlide');
+        const sliderDots = document.getElementById('sliderDots').children;
+        
+        let currentSlide = 0;
+        const slideCount = testimonialSlider.children.length;
+
+        function updateSlider() {
+            testimonialSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            for (let i = 0; i < sliderDots.length; i++) {
+                sliderDots[i].classList.remove('active');
+            }
+            sliderDots[currentSlide].classList.add('active');
+        }
+
+        prevSlide.addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateSlider();
+        });
+
+        nextSlide.addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateSlider();
+        });
+
+        // Add click event to dots
+        for (let i = 0; i < sliderDots.length; i++) {
+            sliderDots[i].addEventListener('click', () => {
+                currentSlide = i;
+                updateSlider();
+            });
+        }
+
+        // Auto slide
+        setInterval(() => {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateSlider();
+        }, 5000);
+
+        // Navigation highlighting based on scroll
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (window.pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile Nav Scroll
+        const navList = document.querySelector('.nav-list');
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        navList.addEventListener('mousedown', (e) => {
+            isDown = true;
+            startX = e.pageX - navList.offsetLeft;
+            scrollLeft = navList.scrollLeft;
+        });
+
+        navList.addEventListener('mouseleave', () => {
+            isDown = false;
+        });
+
+        navList.addEventListener('mouseup', () => {
+            isDown = false;
+        });
+
+        navList.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - navList.offsetLeft;
+            const walk = (x - startX) * 2;
+            navList.scrollLeft = scrollLeft - walk;
+        });
+
+        // 페이지 로더
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('pageLoader').classList.add('loader-hidden');
+            }, 800);
+        });
+        
+        // 스크롤 프로그레스 바
+        window.addEventListener('scroll', () => {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercent = (scrollTop / scrollHeight) * 100;
+            
+            document.getElementById('scrollProgress').style.width = scrollPercent + '%';
+        });
+        
+        // 다크 모드 토글
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const rootElement = document.documentElement;
+        let isDarkMode = false;
+        
+        themeToggle.addEventListener('click', () => {
+            isDarkMode = !isDarkMode;
+            
+            if (isDarkMode) {
+                rootElement.style.setProperty('--primary', '#4a69bd');
+                rootElement.style.setProperty('--primary-light', '#6a89cc');
+                rootElement.style.setProperty('--primary-dark', '#2c3e50');
+                rootElement.style.setProperty('--secondary', '#222');
+                rootElement.style.setProperty('--text-dark', '#eee');
+                rootElement.style.setProperty('--text-light', '#bbb');
+                rootElement.style.setProperty('--white', '#333');
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+            } else {
+                rootElement.style.setProperty('--primary', '#1f3a93');
+                rootElement.style.setProperty('--primary-light', '#4a69bd');
+                rootElement.style.setProperty('--primary-dark', '#142660');
+                rootElement.style.setProperty('--secondary', '#f5f7fa');
+                rootElement.style.setProperty('--text-dark', '#333');
+                rootElement.style.setProperty('--text-light', '#777');
+                rootElement.style.setProperty('--white', '#fff');
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+            }
+        });
+    </script>
+</body>
+</html>
